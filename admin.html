@@ -189,6 +189,35 @@ background:#00ffc3;
 border-radius:999px;
 }
 
+.password-input{
+width:100%;
+padding:16px;
+margin-top:10px;
+border:none;
+border-radius:14px;
+background:rgba(255,255,255,0.06);
+color:white;
+font-size:1rem;
+}
+
+.password-button{
+margin-top:15px;
+width:100%;
+padding:16px;
+border:none;
+border-radius:14px;
+background:#00ffc3;
+color:black;
+font-weight:700;
+cursor:pointer;
+}
+
+.password-message{
+margin-top:15px;
+color:#00ffc3;
+font-size:0.95rem;
+}
+
 footer{
 text-align:center;
 padding:60px 0 20px;
@@ -316,6 +345,32 @@ Auto updates every 1 minute.
 
 </div>
 
+<div class="card">
+
+<h2>Change Password</h2>
+
+<input
+type="password"
+id="newPassword"
+placeholder="New Password"
+class="password-input">
+
+<button
+onclick="changePassword()"
+class="password-button">
+
+Update Password
+
+</button>
+
+<p
+id="passwordMessage"
+class="password-message">
+
+</p>
+
+</div>
+
 <div class="card" style="grid-column:1/-1;">
 
 <h2>Live Player List</h2>
@@ -381,6 +436,33 @@ function logout(){
 auth.signOut().then(() => {
 
 window.location.href = "admin-login.html";
+
+});
+
+}
+
+function changePassword(){
+
+const user = auth.currentUser;
+
+const newPassword =
+document.getElementById("newPassword").value;
+
+user.updatePassword(newPassword)
+
+.then(() => {
+
+document.getElementById("passwordMessage").innerText =
+"Password updated successfully.";
+
+})
+
+.catch((error) => {
+
+console.log(error);
+
+document.getElementById("passwordMessage").innerText =
+error.message;
 
 });
 
