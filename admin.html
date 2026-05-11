@@ -88,7 +88,6 @@ border-radius:14px;
 background:rgba(255,255,255,0.05);
 border:1px solid rgba(255,255,255,0.08);
 color:white;
-text-decoration:none;
 cursor:pointer;
 }
 
@@ -194,10 +193,6 @@ Protected Firebase admin panel for Unova Roleplay management.
 
 <h2>TX Admin</h2>
 
-<p>
-Use the link below to access txAdmin.
-</p>
-
 <div class="copy-box">
 
 <a
@@ -249,21 +244,15 @@ discord.gg/md6cwMh7eF
 
 </div>
 
-<script type="module">
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 
-import { initializeApp }
-from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 
-import {
-getAuth,
-onAuthStateChanged,
-signOut
-}
-from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+<script>
 
 const firebaseConfig = {
 
-apiKey: "AIzaSyDVeGxU1lsvEQMdl1VAW4G-kSKkCWfCXgI",
+apiKey: "AIzaSyDVeGxU1lsvEQMd1lVAW4G-kSKkCWfCXgI",
 
 authDomain: "unova-rp.firebaseapp.com",
 
@@ -279,11 +268,11 @@ measurementId: "G-KD69CW2DLK"
 
 };
 
-const app = initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 
-const auth = getAuth(app);
+const auth = firebase.auth();
 
-onAuthStateChanged(auth, (user) => {
+auth.onAuthStateChanged((user) => {
 
 if(!user){
 
@@ -293,11 +282,13 @@ window.location.href = "admin-login.html";
 
 });
 
-window.logout = async function(){
+function logout(){
 
-await signOut(auth);
+auth.signOut().then(() => {
 
 window.location.href = "admin-login.html";
+
+});
 
 }
 
