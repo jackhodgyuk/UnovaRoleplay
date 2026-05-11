@@ -1,477 +1,477 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <title>Unova Roleplay</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="icon" type="image/gif" href="https://r2.fivemanage.com/O8nsC8f5nKWaQAbWhOnvx/3dgifmaker27271.gif">
+<title>Unova Roleplay</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="icon" type="image/gif" href="https://r2.fivemanage.com/O8nsC8f5nKWaQAbWhOnvx/3dgifmaker27271.gif">
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:'Inter',sans-serif;
-    }
+<style>
 
-    html{
-      scroll-behavior:smooth;
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
 
-    body{
-      background:#050505;
-      color:white;
-      overflow-x:hidden;
-    }
+html{
+scroll-behavior:smooth;
+}
 
-    .background{
-      position:fixed;
-      inset:0;
-      background:
-      linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.85)),
-      url('https://images.unsplash.com/photo-1514565131-fce0801e5785?q=80&w=2070&auto=format&fit=crop');
-      background-size:cover;
-      background-position:center;
-      z-index:-2;
-    }
+body{
+background:#050505;
+color:white;
+overflow-x:hidden;
+}
 
-    .glow{
-      position:fixed;
-      width:500px;
-      height:500px;
-      border-radius:50%;
-      background:rgba(0,255,200,0.15);
-      filter:blur(120px);
-      top:-100px;
-      right:-100px;
-      z-index:-1;
-    }
+.background{
+position:fixed;
+inset:0;
+background:
+linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.85)),
+url('https://images.unsplash.com/photo-1514565131-fce0801e5785?q=80&w=2070&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
+z-index:-2;
+}
 
-    nav{
-      width:calc(100% - 80px);
-      padding:18px 40px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      position:fixed;
-      top:20px;
-      left:40px;
-      right:40px;
-      z-index:100;
-      backdrop-filter:blur(6px);
-      background:linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.45));
-      border:1px solid rgba(255,255,255,0.08);
-      border-radius:24px;
-    }
+.glow{
+position:fixed;
+width:500px;
+height:500px;
+border-radius:50%;
+background:rgba(0,255,200,0.15);
+filter:blur(120px);
+top:-100px;
+right:-100px;
+z-index:-1;
+}
 
-    .logo{
-      display:flex;
-      align-items:center;
-      gap:14px;
-      font-size:1.8rem;
-      font-weight:800;
-      letter-spacing:2px;
-      color:#00ffc3;
-    }
+nav{
+width:calc(100% - 80px);
+padding:18px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:fixed;
+top:20px;
+left:40px;
+right:40px;
+z-index:100;
+backdrop-filter:blur(6px);
+background:linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.45));
+border:1px solid rgba(255,255,255,0.08);
+border-radius:24px;
+}
 
-    .logo img{
-      width:58px;
-      height:58px;
-      object-fit:contain;
-      filter:drop-shadow(0 0 18px rgba(0,255,195,0.45));
-    }
+.logo{
+display:flex;
+align-items:center;
+gap:14px;
+font-size:1.8rem;
+font-weight:800;
+letter-spacing:2px;
+color:#00ffc3;
+}
 
-    .nav-links{
-      display:flex;
-      gap:30px;
-    }
+.logo img{
+width:58px;
+height:58px;
+object-fit:contain;
+filter:drop-shadow(0 0 18px rgba(0,255,195,0.45));
+}
 
-    .nav-links a{
-      color:white;
-      text-decoration:none;
-      font-weight:500;
-      transition:0.3s;
-    }
+.nav-links{
+display:flex;
+gap:30px;
+}
 
-    .nav-links a:hover{
-      color:#00ffc3;
-    }
+.nav-links a{
+color:white;
+text-decoration:none;
+font-weight:500;
+transition:0.3s;
+}
 
-    .hero{
-      position:relative;
-      overflow:hidden;
-      min-height:115vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      padding:140px 8% 120px;
-    }
+.nav-links a:hover{
+color:#00ffc3;
+}
 
-    .hero-banner{
-      position:absolute;
-      inset:0;
-      width:100%;
-      height:115vh;
-      object-fit:cover;
-      opacity:0.78;
-      filter:saturate(1.5) contrast(1.2) brightness(1.15);
-    }
+.hero{
+position:relative;
+overflow:hidden;
+min-height:115vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:140px 8% 120px;
+}
 
-    .hero-overlay{
-      position:absolute;
-      inset:0;
-      background:linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.65));
-    }
+.hero-banner{
+position:absolute;
+inset:0;
+width:100%;
+height:115vh;
+object-fit:cover;
+opacity:0.78;
+filter:saturate(1.5) contrast(1.2) brightness(1.15);
+}
 
-    .hero-content{
-      position:relative;
-      z-index:2;
-      max-width:900px;
-    }
+.hero-overlay{
+position:absolute;
+inset:0;
+background:linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.65));
+}
 
-    .tag{
-      display:inline-block;
-      padding:10px 18px;
-      border-radius:999px;
-      background:rgba(0,255,195,0.12);
-      border:1px solid rgba(0,255,195,0.35);
-      color:#00ffc3;
-      margin-bottom:25px;
-      font-size:0.9rem;
-      font-weight:600;
-      letter-spacing:1px;
-    }
+.hero-content{
+position:relative;
+z-index:2;
+max-width:900px;
+}
 
-    h1{
-      font-size:clamp(3rem,8vw,6.5rem);
-      line-height:1;
-      font-weight:800;
-      margin-bottom:25px;
-      text-transform:uppercase;
-    }
+.tag{
+display:inline-block;
+padding:10px 18px;
+border-radius:999px;
+background:rgba(0,255,195,0.12);
+border:1px solid rgba(0,255,195,0.35);
+color:#00ffc3;
+margin-bottom:25px;
+font-size:0.9rem;
+font-weight:600;
+letter-spacing:1px;
+}
 
-    .highlight{
-      color:#00ffc3;
-      text-shadow:0 0 20px rgba(0,255,195,0.6);
-    }
+h1{
+font-size:clamp(3rem,8vw,6.5rem);
+line-height:1;
+font-weight:800;
+margin-bottom:25px;
+text-transform:uppercase;
+}
 
-    .hero p{
-      font-size:1.15rem;
-      color:rgba(255,255,255,0.8);
-      line-height:1.8;
-      margin-bottom:40px;
-    }
+.highlight{
+color:#00ffc3;
+text-shadow:0 0 20px rgba(0,255,195,0.6);
+}
 
-    .buttons{
-      display:flex;
-      justify-content:center;
-      gap:20px;
-      flex-wrap:wrap;
-    }
+.hero p{
+font-size:1.15rem;
+color:rgba(255,255,255,0.8);
+line-height:1.8;
+margin-bottom:40px;
+}
 
-    .btn{
-      padding:16px 34px;
-      border-radius:16px;
-      font-weight:700;
-      text-decoration:none;
-      transition:0.3s;
-      display:inline-block;
-    }
+.buttons{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+}
 
-    .btn-primary{
-      background:#00ffc3;
-      color:black;
-      box-shadow:0 0 30px rgba(0,255,195,0.35);
-    }
+.btn{
+padding:16px 34px;
+border-radius:16px;
+font-weight:700;
+text-decoration:none;
+transition:0.3s;
+display:inline-block;
+}
 
-    .btn-secondary{
-      border:1px solid rgba(255,255,255,0.18);
-      background:rgba(255,255,255,0.05);
-      color:white;
-    }
+.btn-primary{
+background:#00ffc3;
+color:black;
+box-shadow:0 0 30px rgba(0,255,195,0.35);
+}
 
-    .features{
-      padding:100px 8%;
-    }
+.btn-secondary{
+border:1px solid rgba(255,255,255,0.18);
+background:rgba(255,255,255,0.05);
+color:white;
+}
 
-    .section-title{
-      text-align:center;
-      font-size:2.8rem;
-      margin-bottom:60px;
-      font-weight:800;
-    }
+.features{
+padding:100px 8%;
+}
 
-    .feature-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:30px;
-    }
+.section-title{
+text-align:center;
+font-size:2.8rem;
+margin-bottom:60px;
+font-weight:800;
+}
 
-    .card{
-      background:rgba(255,255,255,0.05);
-      border:1px solid rgba(255,255,255,0.08);
-      border-radius:28px;
-      padding:35px;
-      backdrop-filter:blur(10px);
-    }
+.feature-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:30px;
+}
 
-    .card h3{
-      margin-bottom:15px;
-      font-size:1.4rem;
-      color:#00ffc3;
-    }
+.card{
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.08);
+border-radius:28px;
+padding:35px;
+backdrop-filter:blur(10px);
+}
 
-    .card p{
-      color:rgba(255,255,255,0.75);
-      line-height:1.7;
-    }
+.card h3{
+margin-bottom:15px;
+font-size:1.4rem;
+color:#00ffc3;
+}
 
-    .stats{
-      padding:40px 8% 100px;
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-      gap:25px;
-    }
+.card p{
+color:rgba(255,255,255,0.75);
+line-height:1.7;
+}
 
-    .stat-box{
-      text-align:center;
-      padding:35px;
-      border-radius:24px;
-      background:rgba(255,255,255,0.04);
-      border:1px solid rgba(255,255,255,0.08);
-    }
+.stats{
+padding:40px 8% 100px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:25px;
+}
 
-    .stat-box h2{
-      font-size:3rem;
-      color:#00ffc3;
-      margin-bottom:10px;
-    }
+.stat-box{
+text-align:center;
+padding:35px;
+border-radius:24px;
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(255,255,255,0.08);
+}
 
-    .stat-box span{
-      color:rgba(255,255,255,0.7);
-    }
+.stat-box h2{
+font-size:3rem;
+color:#00ffc3;
+margin-bottom:10px;
+}
 
-    footer{
-      padding:40px 8%;
-      text-align:center;
-      border-top:1px solid rgba(255,255,255,0.08);
-      color:rgba(255,255,255,0.6);
-    }
+.stat-box span{
+color:rgba(255,255,255,0.7);
+}
 
-    @media (max-width:768px){
+footer{
+padding:40px 8%;
+text-align:center;
+border-top:1px solid rgba(255,255,255,0.08);
+color:rgba(255,255,255,0.6);
+}
 
-      nav{
-        width:calc(100% - 20px);
-        left:10px;
-        right:10px;
-        top:10px;
-        padding:14px 18px;
-        flex-direction:column;
-        gap:14px;
-      }
+@media(max-width:768px){
 
-      .logo{
-        font-size:1.2rem;
-      }
+nav{
+width:calc(100% - 20px);
+left:10px;
+right:10px;
+top:10px;
+padding:14px 18px;
+flex-direction:column;
+gap:14px;
+}
 
-      .logo img{
-        width:42px;
-        height:42px;
-      }
+.logo{
+font-size:1.2rem;
+}
 
-      .nav-links{
-        flex-wrap:wrap;
-        justify-content:center;
-        gap:14px;
-      }
+.logo img{
+width:42px;
+height:42px;
+}
 
-      .nav-links a{
-        font-size:0.9rem;
-      }
+.nav-links{
+flex-wrap:wrap;
+justify-content:center;
+gap:14px;
+}
 
-      .hero{
-        min-height:100vh;
-        padding:180px 20px 100px;
-      }
+.nav-links a{
+font-size:0.9rem;
+}
 
-      .hero-banner{
-        height:100%;
-      }
+.hero{
+min-height:100vh;
+padding:180px 20px 100px;
+}
 
-      h1{
-        font-size:3rem;
-      }
+.hero-banner{
+height:100%;
+}
 
-      .hero p{
-        font-size:1rem;
-        line-height:1.7;
-      }
+h1{
+font-size:3rem;
+}
 
-      .buttons{
-        flex-direction:column;
-        width:100%;
-      }
+.hero p{
+font-size:1rem;
+line-height:1.7;
+}
 
-      .btn{
-        width:100%;
-        text-align:center;
-      }
+.buttons{
+flex-direction:column;
+width:100%;
+}
 
-      .features{
-        padding:80px 20px;
-      }
+.btn{
+width:100%;
+text-align:center;
+}
 
-      .section-title{
-        font-size:2rem;
-      }
+.features{
+padding:80px 20px;
+}
 
-      .stats{
-        padding:20px 20px 80px;
-      }
+.section-title{
+font-size:2rem;
+}
 
-    }
+.stats{
+padding:20px 20px 80px;
+}
 
-  </style>
+}
+
+</style>
 </head>
 
 <body>
 
-  <div class="background"></div>
-  <div class="glow"></div>
+<div class="background"></div>
+<div class="glow"></div>
 
-  <nav>
+<nav>
 
-    <div class="logo">
-      <img src="https://r2.fivemanage.com/O8nsC8f5nKWaQAbWhOnvx/3dgifmaker27271.gif">
-      <span>UNOVA RP</span>
-    </div>
+<div class="logo">
+<img src="https://r2.fivemanage.com/O8nsC8f5nKWaQAbWhOnvx/3dgifmaker27271.gif">
+<span>UNOVA RP</span>
+</div>
 
-    <div class="nav-links">
-      <a href="#features">Features</a>
-      <a href="#community">Community</a>
-      <a href="rules.html">Rules</a>
-      <a href="#join">Join</a>
-    </div>
+<div class="nav-links">
+<a href="#features">Features</a>
+<a href="#community">Community</a>
+<a href="rules.html">Rules</a>
+<a href="staff.html">Management</a>
+<a href="#join">Join</a>
+</div>
 
-  </nav>
+</nav>
 
-  <section class="hero">
+<section class="hero">
 
-    <img class="hero-banner" src="https://r2.fivemanage.com/O8nsC8f5nKWaQAbWhOnvx/unovabanner.gif">
+<img class="hero-banner" src="https://r2.fivemanage.com/O8nsC8f5nKWaQAbWhOnvx/unovabanner.gif">
 
-    <div class="hero-overlay"></div>
+<div class="hero-overlay"></div>
 
-    <div class="hero-content">
+<div class="hero-content">
 
-      <div class="tag">NEXT LEVEL FIVEM ROLEPLAY</div>
+<div class="tag">NEXT LEVEL FIVEM ROLEPLAY</div>
 
-      <h1>
-        Welcome To <span class="highlight">Unova</span><br>
-        Roleplay
-      </h1>
+<h1>
+Welcome To <span class="highlight">Unova</span><br>
+Roleplay
+</h1>
 
-      <p>
-        A premium FiveM roleplay experience featuring realistic jobs,
-        immersive gangs, custom vehicles, player-owned businesses,
-        active staff, Qbox framework support, and over 300+ custom assets.
-      </p>
+<p>
+A premium FiveM roleplay experience featuring realistic jobs,
+immersive gangs, custom vehicles, player-owned businesses,
+active staff, Qbox framework support, and over 300+ custom assets.
+</p>
 
-      <div class="buttons" id="join">
-        <a href="https://discord.gg/md6cwMh7eF" class="btn btn-primary">
-          Join Discord
-        </a>
+<div class="buttons" id="join">
 
-        <a href="fivem://connect/yourserverip" class="btn btn-secondary">
-          Connect To Server
-        </a>
-      </div>
+<a href="https://discord.gg/md6cwMh7eF" class="btn btn-primary">
+Join Discord
+</a>
 
-    </div>
+<a href="fivem://connect/yourserverip" class="btn btn-secondary">
+Connect To Server
+</a>
 
-  </section>
+</div>
 
-  <section class="features" id="features">
+</div>
 
-    <h2 class="section-title">Why Play Unova?</h2>
+</section>
 
-    <div class="feature-grid">
+<section class="features" id="features">
 
-      <div class="card">
-        <h3>Qbox Framework</h3>
+<h2 class="section-title">Why Play Unova?</h2>
 
-        <p>
-          Built on the powerful Qbox framework with immersive systems,
-          optimized performance and realistic gameplay mechanics.
-        </p>
-      </div>
+<div class="feature-grid">
 
-      <div class="card">
-        <h3>Player Businesses</h3>
+<div class="card">
+<h3>Qbox Framework</h3>
+<p>
+Built on the powerful Qbox framework with immersive systems,
+optimized performance and realistic gameplay mechanics.
+</p>
+</div>
 
-        <p>
-          Run mechanics, dealerships, clubs, restaurants and more
-          with a realistic player economy.
-        </p>
-      </div>
+<div class="card">
+<h3>Player Businesses</h3>
+<p>
+Run mechanics, dealerships, clubs, restaurants and more
+with a realistic player economy.
+</p>
+</div>
 
-      <div class="card">
-        <h3>Custom Vehicles</h3>
+<div class="card">
+<h3>Custom Vehicles</h3>
+<p>
+Drive custom imported cars with realistic handling,
+tuning, liveries and modifications.
+</p>
+</div>
 
-        <p>
-          Drive custom imported cars with realistic handling,
-          tuning, liveries and modifications.
-        </p>
-      </div>
+<div class="card">
+<h3>Serious RP Community</h3>
+<p>
+Join a growing community focused on immersive,
+story-driven and high quality roleplay.
+</p>
+</div>
 
-      <div class="card">
-        <h3>Serious RP Community</h3>
+</div>
 
-        <p>
-          Join a growing community focused on immersive,
-          story-driven and high quality roleplay.
-        </p>
-      </div>
+</section>
 
-    </div>
+<section class="stats" id="community">
 
-  </section>
+<div class="stat-box">
+<h2>24/7</h2>
+<span>Server Uptime</span>
+</div>
 
-  <section class="stats" id="community">
+<div class="stat-box">
+<h2>300+</h2>
+<span>Custom Assets</span>
+</div>
 
-    <div class="stat-box">
-      <h2>24/7</h2>
-      <span>Server Uptime</span>
-    </div>
+<div class="stat-box">
+<h2>QBOX</h2>
+<span>Framework</span>
+</div>
 
-    <div class="stat-box">
-      <h2>300+</h2>
-      <span>Custom Assets</span>
-    </div>
+<div class="stat-box">
+<h2>Serious</h2>
+<span>Roleplay</span>
+</div>
 
-    <div class="stat-box">
-      <h2>QBOX</h2>
-      <span>Framework</span>
-    </div>
+</section>
 
-    <div class="stat-box">
-      <h2>Serious</h2>
-      <span>Roleplay</span>
-    </div>
-
-  </section>
-
-  <footer>
-    © 2026 Unova Roleplay
-  </footer>
+<footer>
+© 2026 Unova Roleplay
+</footer>
 
 </body>
 </html>
