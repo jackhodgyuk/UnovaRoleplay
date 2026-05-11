@@ -203,21 +203,21 @@ Authorized Unova Management Only
 
 function login(){
 
-const username =
-document.getElementById('username').value;
+  const username =
+  document.getElementById('username').value.trim();
 
-const password =
-document.getElementById('password').value;
+  const password =
+  document.getElementById('password').value.trim();
 
-if(username === 'admin' && password === 'unova2026'){
+  if(username === "admin" && password === "unova2026"){
 
-window.location.href = 'staff.html';
+    window.location.href = "./admin.html";
 
-}else{
+  } else {
 
-document.getElementById('error').style.display = 'block';
+    document.getElementById('error').style.display = "block";
 
-}
+  }
 
 }
 
