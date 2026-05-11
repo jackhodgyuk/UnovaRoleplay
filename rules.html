@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Unova Roleplay Rules</title>
 
 <link rel="icon" type="image/gif" href="https://r2.fivemanage.com/O8nsC8f5nKWaQAbWhOnvx/3dgifmaker27271.gif">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -19,11 +23,38 @@ box-sizing:border-box;
 font-family:'Inter',sans-serif;
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
 background:#050505;
 color:white;
-padding:40px;
-line-height:1.9;
+overflow-x:hidden;
+padding:40px 20px;
+}
+
+.background{
+position:fixed;
+inset:0;
+background:
+linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.9)),
+url('https://r2.fivemanage.com/O8nsC8f5nKWaQAbWhOnvx/unovabanner.gif');
+background-size:cover;
+background-position:center;
+z-index:-2;
+}
+
+.glow{
+position:fixed;
+width:500px;
+height:500px;
+border-radius:50%;
+background:rgba(0,255,200,0.12);
+filter:blur(120px);
+top:-100px;
+right:-100px;
+z-index:-1;
 }
 
 .container{
@@ -31,47 +62,135 @@ max-width:1200px;
 margin:auto;
 }
 
-h1{
-font-size:4rem;
-margin-bottom:20px;
+.topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:40px;
+flex-wrap:wrap;
+gap:20px;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:14px;
+font-size:2rem;
+font-weight:800;
 color:#00ffc3;
 }
 
-.subtitle{
-margin-bottom:50px;
-color:rgba(255,255,255,0.75);
+.logo img{
+width:58px;
+height:58px;
+object-fit:contain;
+filter:drop-shadow(0 0 18px rgba(0,255,195,0.45));
 }
 
-.card{
+.back-btn{
+padding:14px 24px;
+border-radius:16px;
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
+color:white;
+text-decoration:none;
+transition:0.3s;
+}
+
+.back-btn:hover{
+background:rgba(255,255,255,0.12);
+}
+
+.hero{
+margin-bottom:50px;
+}
+
+.hero h1{
+font-size:clamp(3rem,8vw,5rem);
+margin-bottom:20px;
+color:#00ffc3;
+line-height:1;
+}
+
+.hero p{
+font-size:1.1rem;
+line-height:1.9;
+color:rgba(255,255,255,0.8);
+max-width:1000px;
+}
+
+.rule-card{
 background:rgba(255,255,255,0.05);
 border:1px solid rgba(255,255,255,0.08);
-padding:35px;
 border-radius:28px;
+padding:40px;
 margin-bottom:30px;
-backdrop-filter:blur(10px);
+backdrop-filter:blur(12px);
 }
 
-h2{
+.rule-card h2{
 color:#00ffc3;
 margin-bottom:20px;
+font-size:2rem;
 }
 
-ul{
-padding-left:20px;
+.rule-card h3{
+margin-top:25px;
+margin-bottom:12px;
+color:white;
+font-size:1.2rem;
 }
 
-li{
+.rule-card p{
+line-height:1.9;
+color:rgba(255,255,255,0.78);
+margin-bottom:12px;
+}
+
+.rule-card ul{
+padding-left:22px;
+}
+
+.rule-card li{
 margin-bottom:10px;
+line-height:1.8;
+color:rgba(255,255,255,0.78);
 }
 
-a{
-color:#00ffc3;
-text-decoration:none;
+.footer{
+text-align:center;
+padding:50px 0 20px;
+color:rgba(255,255,255,0.5);
 }
 
-.back{
-display:inline-block;
-margin-bottom:30px;
+@media(max-width:768px){
+
+.topbar{
+flex-direction:column;
+align-items:flex-start;
+}
+
+.logo{
+font-size:1.4rem;
+}
+
+.logo img{
+width:44px;
+height:44px;
+}
+
+.rule-card{
+padding:25px;
+}
+
+.hero h1{
+font-size:3rem;
+}
+
+.rule-card h2{
+font-size:1.6rem;
+}
+
 }
 
 </style>
@@ -79,75 +198,280 @@ margin-bottom:30px;
 
 <body>
 
+<div class="background"></div>
+<div class="glow"></div>
+
 <div class="container">
 
-<a href="index.html" class="back">← Back To Homepage</a>
+<div class="topbar">
+
+<div class="logo">
+<img src="https://r2.fivemanage.com/O8nsC8f5nKWaQAbWhOnvx/3dgifmaker27271.gif">
+<span>UNOVA RP</span>
+</div>
+
+<a href="index.html" class="back-btn">
+← Back To Homepage
+</a>
+
+</div>
+
+<div class="hero">
 
 <h1>Unova Roleplay Official BIBLE of Rules</h1>
 
-<p class="subtitle">
-Welcome to Unova Roleplay, a serious FiveM roleplay server focused on immersive,
-realistic and story-driven roleplay.
-</p>
-
-<div class="card">
-<h2>1. Community Standards</h2>
-<ul>
-<li>Strictly 18+</li>
-<li>Functional microphone required</li>
-<li>Clipping software required</li>
-<li>No harassment, racism, sexism or discrimination</li>
-<li>No advertising other communities</li>
-<li>No cheating or exploiting</li>
-</ul>
-</div>
-
-<div class="card">
-<h2>2. Character & Roleplay Rules</h2>
-<ul>
-<li>Remain in character at all times</li>
-<li>No Fail RP</li>
-<li>No Metagaming</li>
-<li>No Powergaming</li>
-<li>No ERP or terrorism RP</li>
-<li>Value your life realistically</li>
-</ul>
-</div>
-
-<div class="card">
-<h2>3. Combat Rules</h2>
-<ul>
-<li>No RDM or VDM</li>
-<li>Hostile RP requires initiation</li>
-<li>Guns are a last resort</li>
-<li>No unrealistic vehicle usage</li>
-<li>Green Zones must be respected</li>
-</ul>
-</div>
-
-<div class="card">
-<h2>4. New Life Rule</h2>
 <p>
-If your character dies or enters a coma,
-you forget the last 15 minutes leading up to the event.
+Welcome to Unova Roleplay, a serious FiveM roleplay server focused on realistic,
+immersive and story-driven roleplay. These rules exist to ensure fairness,
+consistency and high-quality roleplay throughout the city.
 </p>
+
 </div>
 
-<div class="card">
-<h2>5. Whitelisted Jobs</h2>
+<div class="rule-card">
+
+<h2>1. Introduction & Server Philosophy</h2>
+
+<p>
+Welcome to Unova Roleplay, a serious FiveM roleplay server focused on realistic,
+immersive, and story-driven roleplay.
+</p>
+
+<p>
+Unova Roleplay operates under the principle of Roleplay over Ruleplay in limited circumstances.
+Strong believable roleplay may take priority over strict rule interpretation only when approved by staff.
+</p>
+
+<p>
+By joining Unova Roleplay, you agree to always follow these rules both in-city and out-of-city.
+</p>
+
+</div>
+
+<div class="rule-card">
+
+<h2>2. Community Standards & General Conduct</h2>
+
+<h3>2.1 Eligibility & Requirements</h3>
+
 <ul>
-<li>No impersonating Police, UHS, Fire or Government</li>
+<li>The server is strictly 18+</li>
+<li>You must have a clear and functional microphone</li>
+<li>You must always have clipping software turned on</li>
+<li>Controllers are permitted within the server</li>
+</ul>
+
+<h3>2.2 Discord & Whitelisting</h3>
+
+<ul>
+<li>You must be a member of the Discord with a valid whitelist role</li>
+<li>Leaving the Discord may result in whitelist removal</li>
+<li>Whitelist applications using AI may be rejected</li>
+</ul>
+
+<h3>2.3 Staff Interaction & Conduct</h3>
+
+<ul>
+<li>Do not DM or tag staff members</li>
+<li>All issues must be handled via tickets</li>
+<li>Discussing reports outside tickets is forbidden</li>
+<li>Staff disrespect will not be tolerated</li>
+</ul>
+
+<h3>2.4 Development & Staff Interaction</h3>
+
+<ul>
+<li>Suggestions must be posted in the correct Discord channel</li>
+<li>Developers wearing developer vests cannot be interacted with</li>
+<li>Bullying, racism, sexism, homophobia or abuse will not be tolerated</li>
+</ul>
+
+</div>
+
+<div class="rule-card">
+
+<h2>3. Respect, Safety & Zero-Tolerance Policies</h2>
+
+<ul>
+<li>No racism, sexism, homophobia, transphobia or discrimination</li>
+<li>No harassment or bullying</li>
+<li>No cheating or exploiting</li>
+<li>No selling in-game items for real money</li>
+<li>No advertising other servers</li>
+</ul>
+
+</div>
+
+<div class="rule-card">
+
+<h2>4. Character Creation & Roleplay Integrity</h2>
+
+<h3>4.1 Character Names & Looks</h3>
+
+<ul>
+<li>Characters must have realistic names</li>
+<li>Names must comply with platform TOS</li>
+<li>You cannot wear staff uniforms unless staff</li>
+</ul>
+
+<h3>4.2 Staying In Character</h3>
+
+<ul>
+<li>You must remain in character at all times</li>
+<li>No OOC comments or rule quoting during RP</li>
+<li>Report rule breaks after the scene finishes</li>
+</ul>
+
+<h3>4.3 Prohibited Roleplay</h3>
+
+<ul>
+<li>No ERP</li>
+<li>No Suicide RP</li>
+<li>No Terrorism RP</li>
+</ul>
+
+</div>
+
+<div class="rule-card">
+
+<h2>5. Metagaming, Powergaming & Fail RP</h2>
+
+<h3>5.1 Metagaming</h3>
+
+<ul>
+<li>No using Discord or stream information IC</li>
+<li>No external communication during RP scenes</li>
+</ul>
+
+<h3>5.2 Powergaming</h3>
+
+<ul>
+<li>No unrealistic physical abilities</li>
+<li>No forcing RP outcomes</li>
+<li>No mechanic abuse</li>
+</ul>
+
+<h3>5.3 Fail RP</h3>
+
+<ul>
+<li>No ignoring injuries</li>
+<li>No unrealistic reactions</li>
+<li>No poor-quality disruptive RP</li>
+</ul>
+
+</div>
+
+<div class="rule-card">
+
+<h2>6. Combat, Violence & Life Value</h2>
+
+<h3>6.1 RDM</h3>
+
+<ul>
+<li>You need valid story-driven reasons to harm players</li>
+<li>Guns should always be a last resort</li>
+</ul>
+
+<h3>6.2 VDM</h3>
+
+<ul>
+<li>Vehicles cannot intentionally be used as weapons</li>
+<li>Vehicle combat must be roleplayed realistically</li>
+</ul>
+
+<h3>6.3 Vehicle Jumps</h3>
+
+<ul>
+<li>Vehicle jumps are permitted if realistic</li>
+<li>Crashes require injury RP</li>
+</ul>
+
+<h3>6.4 NVL</h3>
+
+<ul>
+<li>You must realistically fear for your life</li>
+<li>Ignoring danger is considered NVL</li>
+</ul>
+
+</div>
+
+<div class="rule-card">
+
+<h2>7. New Life Rule & Injury RP</h2>
+
+<h3>7.1 NLR</h3>
+
+<p>
+If you enter a coma or respawn, you forget the last 15 minutes leading up to the incident.
+You cannot return to the same scene or instantly seek revenge.
+</p>
+
+<h3>7.2 Injury RP</h3>
+
+<ul>
+<li>All injuries must be roleplayed realistically</li>
+<li>You may not instantly recover from serious injuries</li>
+<li>You cannot ignore pain or wounds</li>
+</ul>
+
+</div>
+
+<div class="rule-card">
+
+<h2>8. Crime, Robberies & Hostages</h2>
+
+<ul>
+<li>You cannot rob Stage 1 or Stage 2 players</li>
+<li>Robberies require valid RP and weapon usage</li>
+<li>Violence must always be justified</li>
+<li>Fake hostages are forbidden</li>
+<li>You may not rob your hostage</li>
+</ul>
+
+</div>
+
+<div class="rule-card">
+
+<h2>9. Police, Whitelisted Jobs & Corruption</h2>
+
+<ul>
+<li>No impersonating PD, UHS, Fire or Government</li>
+<li>Whitelisted jobs are protected</li>
 <li>Corruption requires staff approval</li>
 <li>Police equipment cannot be stolen</li>
+<li>Boxed vehicles must surrender during chases</li>
 </ul>
+
 </div>
 
-<div class="card">
-<h2>6. Final Notes</h2>
-<p>
-Staff reserve the right to interpret rules based on context.
-Rules may change at any time.
-</p>
+<div class="rule-card">
+
+<h2>10. Zones, Initiation & Special Areas</h2>
+
+<ul>
+<li>All hostile RP requires initiation</li>
+<li>There are no red zones</li>
+<li>Green Zones include UHS, Fire, Government and events</li>
+<li>No hostile RP inside Green Zones</li>
+</ul>
+
+</div>
+
+<div class="rule-card">
+
+<h2>11. Tasers & Weapons</h2>
+
+<ul>
+<li>Melee and gun users must fear tasers realistically</li>
+<li>The first firearm drawn gains upper hand</li>
+<li>Only PD may possess the Glock-19</li>
+<li>Staff may allow exceptions for high-quality RP</li>
+</ul>
+
+</div>
+
+<div class="footer">
+© 2026 Unova Roleplay
 </div>
 
 </div>
