@@ -140,18 +140,6 @@ font-size:0.9rem;
 color:rgba(255,255,255,0.55);
 }
 
-@media(max-width:768px){
-
-.login-box{
-padding:28px;
-}
-
-.logo h1{
-font-size:1.7rem;
-}
-
-}
-
 </style>
 
 </head>
@@ -172,9 +160,9 @@ font-size:1.7rem;
 </div>
 
 <input
-type="text"
+type="email"
 id="username"
-placeholder="Username">
+placeholder="Email">
 
 <input
 type="password"
@@ -186,7 +174,7 @@ Login
 </button>
 
 <div class="error" id="error">
-Invalid username or password.
+Invalid email or password.
 </div>
 
 <div class="info">
@@ -199,25 +187,62 @@ Authorized Unova Management Only
 
 </div>
 
-<script>
+<script type="module">
 
-function login(){
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 
-  const username =
-  document.getElementById('username').value.trim();
+import {
+getAuth,
+signInWithEmailAndPassword
+}
+from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
 
-  const password =
-  document.getElementById('password').value.trim();
+const firebaseConfig = {
 
-  if(username === "admin" && password === "unova2026"){
+apiKey: "AIzaSyDVeGxU1lsvEQMdl1VAW4G-kSKkCWfCXgI",
 
-    window.location.href = "./admin.html";
+authDomain: "unova-rp.firebaseapp.com",
 
-  } else {
+projectId: "unova-rp",
 
-    document.getElementById('error').style.display = "block";
+storageBucket: "unova-rp.firebasestorage.app",
 
-  }
+messagingSenderId: "872319010623",
+
+appId: "1:872319010623:web:8fb1d16d4535b9a567758a",
+
+measurementId: "G-KD69CW2DLK"
+
+};
+
+const app = initializeApp(firebaseConfig);
+
+const auth = getAuth(app);
+
+window.login = async function(){
+
+const email =
+document.getElementById("username").value;
+
+const password =
+document.getElementById("password").value;
+
+try{
+
+await signInWithEmailAndPassword(
+auth,
+email,
+password
+);
+
+window.location.href = "admin.html";
+
+}catch(error){
+
+document.getElementById("error").style.display = "block";
+
+}
 
 }
 
