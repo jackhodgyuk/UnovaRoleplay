@@ -189,16 +189,11 @@ Authorized Unova Management Only
 
 </div>
 
-<script type="module">
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
 
-import { initializeApp }
-from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
 
-import {
-getAuth,
-signInWithEmailAndPassword
-}
-from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+<script>
 
 const firebaseConfig = {
 
@@ -218,11 +213,11 @@ measurementId: "G-KD69CW2DLK"
 
 };
 
-const app = initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 
-const auth = getAuth(app);
+const auth = firebase.auth();
 
-window.login = async function(){
+function login(){
 
 const email =
 document.getElementById("username").value.trim();
@@ -230,17 +225,15 @@ document.getElementById("username").value.trim();
 const password =
 document.getElementById("password").value.trim();
 
-try{
+auth.signInWithEmailAndPassword(email, password)
 
-await signInWithEmailAndPassword(
-auth,
-email,
-password
-);
+.then(() => {
 
 window.location.href = "admin.html";
 
-}catch(error){
+})
+
+.catch((error) => {
 
 console.log(error);
 
@@ -249,7 +242,7 @@ document.getElementById("error").style.display = "block";
 document.getElementById("error").innerText =
 error.code + " : " + error.message;
 
-}
+});
 
 }
 
