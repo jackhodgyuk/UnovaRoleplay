@@ -1,3 +1,6 @@
+# File: `admin.html`
+
+```html id="z7m2qp"
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,7 +57,7 @@ z-index:-1;
 }
 
 .container{
-max-width:1200px;
+max-width:1400px;
 margin:auto;
 }
 
@@ -89,6 +92,12 @@ background:rgba(255,255,255,0.05);
 border:1px solid rgba(255,255,255,0.08);
 color:white;
 cursor:pointer;
+transition:0.3s ease;
+}
+
+.logout:hover{
+border-color:rgba(0,255,195,0.35);
+color:#00ffc3;
 }
 
 .hero{
@@ -144,10 +153,70 @@ margin-top:14px;
 border:1px solid rgba(255,255,255,0.06);
 }
 
+.player-box{
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(255,255,255,0.08);
+padding:14px;
+border-radius:14px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:20px;
+flex-wrap:wrap;
+}
+
+.player-name{
+color:#00ffc3;
+font-weight:700;
+}
+
+.player-id{
+color:rgba(255,255,255,0.65);
+}
+
+.player-list{
+display:grid;
+gap:12px;
+margin-top:20px;
+max-height:600px;
+overflow-y:auto;
+padding-right:6px;
+}
+
+.player-list::-webkit-scrollbar{
+width:6px;
+}
+
+.player-list::-webkit-scrollbar-thumb{
+background:#00ffc3;
+border-radius:999px;
+}
+
 footer{
 text-align:center;
 padding:60px 0 20px;
 color:rgba(255,255,255,0.45);
+}
+
+@media(max-width:768px){
+
+.logo{
+font-size:1.4rem;
+}
+
+.logo img{
+width:44px;
+height:44px;
+}
+
+.hero h1{
+font-size:3rem;
+}
+
+.card{
+padding:24px;
+}
+
 }
 
 </style>
@@ -236,6 +305,32 @@ discord.gg/md6cwMh7eF
 
 </div>
 
+<div class="card">
+
+<h2>Server Status</h2>
+
+<p id="playerCount">
+Loading players...
+</p>
+
+<p>
+Auto updates every 1 minute.
+</p>
+
+</div>
+
+<div class="card" style="grid-column:1/-1;">
+
+<h2>Live Player List</h2>
+
+<div
+class="player-list"
+id="playerList">
+
+</div>
+
+</div>
+
 </div>
 
 <footer>
@@ -276,7 +371,9 @@ auth.onAuthStateChanged((user) => {
 
 if(!user){
 
-window.location.href = "admin-login.html";
+window.location.replace("admin-login.html");
+
+return;
 
 }
 
@@ -292,7 +389,86 @@ window.location.href = "admin-login.html";
 
 }
 
+async function loadPlayers(){
+
+try{
+
+const response = await fetch(
+"https://servers-frontend.fivem.net/api/servers/single/e6e6473"
+);
+
+const data = await response.json();
+
+const players =
+data.Data.players || [];
+
+document.getElementById("playerCount").innerText =
+players.length + " Players Online";
+
+const playerList =
+document.getElementById("playerList");
+
+playerList.innerHTML = "";
+
+players.forEach((player) => {
+
+const playerDiv =
+document.createElement("div");
+
+playerDiv.className = "player-box";
+
+playerDiv.innerHTML = `
+
+<div class="player-name">
+${player.name}
+</div>
+
+<div class="player-id">
+ID: ${player.id}
+</div>
+
+`;
+
+playerList.appendChild(playerDiv);
+
+});
+
+}catch(error){
+
+console.log(error);
+
+document.getElementById("playerCount").innerText =
+"Failed to load players.";
+
+}
+
+}
+
+loadPlayers();
+
+setInterval(loadPlayers, 60000);
+
+document.addEventListener("contextmenu", e =>
+e.preventDefault()
+);
+
+document.onkeydown = function(e){
+
+if(
+e.keyCode == 123 ||
+(e.ctrlKey && e.shiftKey && e.keyCode == 'I'.charCodeAt(0)) ||
+(e.ctrlKey && e.shiftKey && e.keyCode == 'J'.charCodeAt(0)) ||
+(e.ctrlKey && e.keyCode == 'U'.charCodeAt(0))
+){
+
+return false;
+
+}
+
+}
+
 </script>
 
 </body>
 </html>
+```
