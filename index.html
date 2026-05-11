@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 <title>Unova Roleplay</title>
 
@@ -34,10 +34,10 @@ overflow-x:hidden;
 }
 
 .background{
-position:fixed;
+position:absolute;
 inset:0;
 background:
-linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.85)),
+linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
 url('https://images.unsplash.com/photo-1514565131-fce0801e5785?q=80&w=2070&auto=format&fit=crop');
 background-size:cover;
 background-position:center;
@@ -93,13 +93,15 @@ filter:drop-shadow(0 0 18px rgba(0,255,195,0.45));
 .nav-links{
 display:flex;
 gap:30px;
+flex-wrap:wrap;
+justify-content:center;
 }
 
 .nav-links a{
 color:white;
 text-decoration:none;
 font-weight:500;
-transition:0.3s;
+transition:0.3s ease;
 }
 
 .nav-links a:hover{
@@ -121,10 +123,12 @@ padding:140px 8% 120px;
 position:absolute;
 inset:0;
 width:100%;
-height:115vh;
+height:100vh;
 object-fit:cover;
+object-position:center;
 opacity:0.78;
-filter:saturate(1.5) contrast(1.2) brightness(1.15);
+filter:saturate(1.5) contrast(1.2) brightness(1.15) scale(1.05);
+pointer-events:none;
 }
 
 .hero-overlay{
@@ -184,7 +188,8 @@ padding:16px 34px;
 border-radius:16px;
 font-weight:700;
 text-decoration:none;
-transition:0.3s;
+transition:0.3s ease;
+border:1px solid transparent;
 display:inline-block;
 }
 
@@ -194,10 +199,20 @@ color:black;
 box-shadow:0 0 30px rgba(0,255,195,0.35);
 }
 
+.btn-primary:hover{
+transform:translateY(-4px);
+box-shadow:0 0 45px rgba(0,255,195,0.5);
+}
+
 .btn-secondary{
 border:1px solid rgba(255,255,255,0.18);
 background:rgba(255,255,255,0.05);
 color:white;
+}
+
+.btn-secondary:hover{
+background:rgba(255,255,255,0.12);
+transform:translateY(-4px);
 }
 
 .features{
@@ -223,6 +238,13 @@ border:1px solid rgba(255,255,255,0.08);
 border-radius:28px;
 padding:35px;
 backdrop-filter:blur(10px);
+transition:0.3s ease;
+}
+
+.card:hover{
+transform:translateY(-10px);
+border-color:rgba(0,255,195,0.4);
+box-shadow:0 10px 40px rgba(0,0,0,0.45);
 }
 
 .card h3{
@@ -268,7 +290,7 @@ border-top:1px solid rgba(255,255,255,0.08);
 color:rgba(255,255,255,0.6);
 }
 
-@media(max-width:768px){
+@media (max-width:768px){
 
 nav{
 width:calc(100% - 20px);
@@ -290,8 +312,6 @@ height:42px;
 }
 
 .nav-links{
-flex-wrap:wrap;
-justify-content:center;
 gap:14px;
 }
 
@@ -342,6 +362,7 @@ padding:20px 20px 80px;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -359,22 +380,27 @@ padding:20px 20px 80px;
 <div class="nav-links">
 <a href="#features">Features</a>
 <a href="#community">Community</a>
+<a href="#join">Join</a>
 <a href="rules.html">Rules</a>
 <a href="staff.html">Management</a>
-<a href="#join">Join</a>
 </div>
 
 </nav>
 
-<section class="hero">
+<section class="hero" id="home">
 
-<img class="hero-banner" src="https://r2.fivemanage.com/O8nsC8f5nKWaQAbWhOnvx/unovabanner.gif">
+<img
+class="hero-banner"
+src="https://r2.fivemanage.com/O8nsC8f5nKWaQAbWhOnvx/unovabanner.gif"
+alt="Unova Banner">
 
 <div class="hero-overlay"></div>
 
 <div class="hero-content">
 
-<div class="tag">NEXT LEVEL FIVEM ROLEPLAY</div>
+<div class="tag">
+NEXT LEVEL FIVEM ROLEPLAY
+</div>
 
 <h1>
 Welcome To <span class="highlight">Unova</span><br>
@@ -389,11 +415,15 @@ active staff, Qbox framework support, and over 300+ custom assets.
 
 <div class="buttons" id="join">
 
-<a href="https://discord.gg/md6cwMh7eF" class="btn btn-primary">
+<a
+href="https://discord.gg/md6cwMh7eF"
+class="btn btn-primary">
 Join Discord
 </a>
 
-<a href="fivem://connect/yourserverip" class="btn btn-secondary">
+<a
+href="fivem://connect/yourserverip"
+class="btn btn-secondary">
 Connect To Server
 </a>
 
@@ -405,31 +435,33 @@ Connect To Server
 
 <section class="features" id="features">
 
-<h2 class="section-title">Why Play Unova?</h2>
+<h2 class="section-title">
+Why Play Unova?
+</h2>
 
 <div class="feature-grid">
 
 <div class="card">
 <h3>Qbox Framework</h3>
 <p>
-Built on the powerful Qbox framework with immersive systems,
-optimized performance and realistic gameplay mechanics.
+Built on the powerful Qbox framework with advanced systems,
+realistic mechanics, immersive jobs, and optimized performance.
 </p>
 </div>
 
 <div class="card">
 <h3>Player Businesses</h3>
 <p>
-Run mechanics, dealerships, clubs, restaurants and more
-with a realistic player economy.
+Run mechanics, restaurants, clubs, dealerships, and more
+with a fully interactive business management experience.
 </p>
 </div>
 
 <div class="card">
-<h3>Custom Vehicles</h3>
+<h3>High Quality Vehicles</h3>
 <p>
 Drive custom imported cars with realistic handling,
-tuning, liveries and modifications.
+animations, liveries, tuning, and modifications.
 </p>
 </div>
 
@@ -464,13 +496,39 @@ story-driven and high quality roleplay.
 
 <div class="stat-box">
 <h2>Serious</h2>
-<span>Roleplay</span>
+<span>Roleplay Community</span>
+</div>
+
+</section>
+
+<section class="features" id="rules">
+
+<h2 class="section-title">
+Server Rules
+</h2>
+
+<div class="card" style="max-width:900px;margin:0 auto;text-align:center;">
+
+<h3 style="margin-bottom:20px;">
+Unova Roleplay Official Rule Book
+</h3>
+
+<p style="margin-bottom:30px;">
+View the complete official Unova Roleplay rules including
+community standards, combat rules, NLR, whitelisted jobs,
+metagaming policies, green zones, initiation rules and more.
+</p>
+
+<a href="rules.html" class="btn btn-primary">
+Open Full Rule Book
+</a>
+
 </div>
 
 </section>
 
 <footer>
-© 2026 Unova Roleplay
+© 2026 Unova Roleplay • Built for immersive FiveM roleplay.
 </footer>
 
 </body>
