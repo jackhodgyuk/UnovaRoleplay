@@ -131,6 +131,8 @@ margin-top:16px;
 text-align:center;
 color:#ff5e5e;
 display:none;
+font-size:0.9rem;
+word-break:break-word;
 }
 
 .info{
@@ -223,10 +225,10 @@ const auth = getAuth(app);
 window.login = async function(){
 
 const email =
-document.getElementById("username").value;
+document.getElementById("username").value.trim();
 
 const password =
-document.getElementById("password").value;
+document.getElementById("password").value.trim();
 
 try{
 
@@ -240,7 +242,12 @@ window.location.href = "admin.html";
 
 }catch(error){
 
+console.log(error);
+
 document.getElementById("error").style.display = "block";
+
+document.getElementById("error").innerText =
+error.code + " : " + error.message;
 
 }
 
