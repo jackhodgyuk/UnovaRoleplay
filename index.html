@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
   <title>Unova Roleplay</title>
 
   <link rel="icon" type="image/gif" href="https://r2.fivemanage.com/O8nsC8f5nKWaQAbWhOnvx/3dgifmaker27271.gif">
@@ -19,6 +20,10 @@
       padding:0;
       box-sizing:border-box;
       font-family:'Inter',sans-serif;
+    }
+
+    html{
+      scroll-behavior:smooth;
     }
 
     body{
@@ -179,6 +184,7 @@
       font-weight:700;
       text-decoration:none;
       transition:0.3s;
+      display:inline-block;
     }
 
     .btn-primary{
@@ -247,6 +253,11 @@
     .stat-box h2{
       font-size:3rem;
       color:#00ffc3;
+      margin-bottom:10px;
+    }
+
+    .stat-box span{
+      color:rgba(255,255,255,0.7);
     }
 
     footer{
@@ -256,129 +267,211 @@
       color:rgba(255,255,255,0.6);
     }
 
+    @media (max-width:768px){
+
+      nav{
+        width:calc(100% - 20px);
+        left:10px;
+        right:10px;
+        top:10px;
+        padding:14px 18px;
+        flex-direction:column;
+        gap:14px;
+      }
+
+      .logo{
+        font-size:1.2rem;
+      }
+
+      .logo img{
+        width:42px;
+        height:42px;
+      }
+
+      .nav-links{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:14px;
+      }
+
+      .nav-links a{
+        font-size:0.9rem;
+      }
+
+      .hero{
+        min-height:100vh;
+        padding:180px 20px 100px;
+      }
+
+      .hero-banner{
+        height:100%;
+      }
+
+      h1{
+        font-size:3rem;
+      }
+
+      .hero p{
+        font-size:1rem;
+        line-height:1.7;
+      }
+
+      .buttons{
+        flex-direction:column;
+        width:100%;
+      }
+
+      .btn{
+        width:100%;
+        text-align:center;
+      }
+
+      .features{
+        padding:80px 20px;
+      }
+
+      .section-title{
+        font-size:2rem;
+      }
+
+      .stats{
+        padding:20px 20px 80px;
+      }
+
+    }
+
   </style>
 </head>
 
 <body>
 
-<div class="background"></div>
-<div class="glow"></div>
+  <div class="background"></div>
+  <div class="glow"></div>
 
-<nav>
+  <nav>
 
-  <div class="logo">
-    <img src="https://r2.fivemanage.com/O8nsC8f5nKWaQAbWhOnvx/3dgifmaker27271.gif">
-    <span>UNOVA RP</span>
-  </div>
-
-  <div class="nav-links">
-    <a href="#features">Features</a>
-    <a href="#community">Community</a>
-    <a href="rules.html">Rules</a>
-    <a href="#join">Join</a>
-  </div>
-
-</nav>
-
-<section class="hero">
-
-  <img class="hero-banner" src="https://r2.fivemanage.com/O8nsC8f5nKWaQAbWhOnvx/unovabanner.gif">
-
-  <div class="hero-overlay"></div>
-
-  <div class="hero-content">
-
-    <div class="tag">NEXT LEVEL FIVEM ROLEPLAY</div>
-
-    <h1>
-      Welcome To <span class="highlight">Unova</span><br>
-      Roleplay
-    </h1>
-
-    <p>
-      A premium FiveM roleplay experience featuring realistic jobs,
-      immersive gangs, custom vehicles, player-owned businesses,
-      active staff, Qbox framework support, and over 300+ custom assets.
-    </p>
-
-    <div class="buttons" id="join">
-      <a href="https://discord.gg/md6cwMh7eF" class="btn btn-primary">Join Discord</a>
-      <a href="fivem://connect/yourserverip" class="btn btn-secondary">Connect To Server</a>
+    <div class="logo">
+      <img src="https://r2.fivemanage.com/O8nsC8f5nKWaQAbWhOnvx/3dgifmaker27271.gif">
+      <span>UNOVA RP</span>
     </div>
 
-  </div>
+    <div class="nav-links">
+      <a href="#features">Features</a>
+      <a href="#community">Community</a>
+      <a href="rules.html">Rules</a>
+      <a href="#join">Join</a>
+    </div>
 
-</section>
+  </nav>
 
-<section class="features" id="features">
+  <section class="hero">
 
-  <h2 class="section-title">Why Play Unova?</h2>
+    <img class="hero-banner" src="https://r2.fivemanage.com/O8nsC8f5nKWaQAbWhOnvx/unovabanner.gif">
 
-  <div class="feature-grid">
+    <div class="hero-overlay"></div>
 
-    <div class="card">
-      <h3>Qbox Framework</h3>
+    <div class="hero-content">
+
+      <div class="tag">NEXT LEVEL FIVEM ROLEPLAY</div>
+
+      <h1>
+        Welcome To <span class="highlight">Unova</span><br>
+        Roleplay
+      </h1>
+
       <p>
-        Built on the powerful Qbox framework with immersive systems,
-        optimized performance and realistic gameplay mechanics.
+        A premium FiveM roleplay experience featuring realistic jobs,
+        immersive gangs, custom vehicles, player-owned businesses,
+        active staff, Qbox framework support, and over 300+ custom assets.
       </p>
+
+      <div class="buttons" id="join">
+        <a href="https://discord.gg/md6cwMh7eF" class="btn btn-primary">
+          Join Discord
+        </a>
+
+        <a href="fivem://connect/yourserverip" class="btn btn-secondary">
+          Connect To Server
+        </a>
+      </div>
+
     </div>
 
-    <div class="card">
-      <h3>Player Businesses</h3>
-      <p>
-        Run mechanics, dealerships, clubs, restaurants and more
-        with a realistic player economy.
-      </p>
+  </section>
+
+  <section class="features" id="features">
+
+    <h2 class="section-title">Why Play Unova?</h2>
+
+    <div class="feature-grid">
+
+      <div class="card">
+        <h3>Qbox Framework</h3>
+
+        <p>
+          Built on the powerful Qbox framework with immersive systems,
+          optimized performance and realistic gameplay mechanics.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Player Businesses</h3>
+
+        <p>
+          Run mechanics, dealerships, clubs, restaurants and more
+          with a realistic player economy.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Custom Vehicles</h3>
+
+        <p>
+          Drive custom imported cars with realistic handling,
+          tuning, liveries and modifications.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Serious RP Community</h3>
+
+        <p>
+          Join a growing community focused on immersive,
+          story-driven and high quality roleplay.
+        </p>
+      </div>
+
     </div>
 
-    <div class="card">
-      <h3>Custom Vehicles</h3>
-      <p>
-        Drive custom imported cars with realistic handling,
-        tuning, liveries and modifications.
-      </p>
+  </section>
+
+  <section class="stats" id="community">
+
+    <div class="stat-box">
+      <h2>24/7</h2>
+      <span>Server Uptime</span>
     </div>
 
-    <div class="card">
-      <h3>Serious RP Community</h3>
-      <p>
-        Join a growing community focused on immersive,
-        story-driven and high quality roleplay.
-      </p>
+    <div class="stat-box">
+      <h2>300+</h2>
+      <span>Custom Assets</span>
     </div>
 
-  </div>
+    <div class="stat-box">
+      <h2>QBOX</h2>
+      <span>Framework</span>
+    </div>
 
-</section>
+    <div class="stat-box">
+      <h2>Serious</h2>
+      <span>Roleplay</span>
+    </div>
 
-<section class="stats" id="community">
+  </section>
 
-  <div class="stat-box">
-    <h2>24/7</h2>
-    <span>Server Uptime</span>
-  </div>
-
-  <div class="stat-box">
-    <h2>300+</h2>
-    <span>Custom Assets</span>
-  </div>
-
-  <div class="stat-box">
-    <h2>QBOX</h2>
-    <span>Framework</span>
-  </div>
-
-  <div class="stat-box">
-    <h2>Serious</h2>
-    <span>Roleplay</span>
-  </div>
-
-</section>
-
-<footer>
-  © 2026 Unova Roleplay
-</footer>
+  <footer>
+    © 2026 Unova Roleplay
+  </footer>
 
 </body>
 </html>
