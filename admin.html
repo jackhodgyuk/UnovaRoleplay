@@ -283,16 +283,6 @@ box-shadow:
 0 0 80px rgba(111,92,255,0.06);
 }
 
-.hero-banner::before{
-content:"";
-position:absolute;
-inset:0;
-background:
-radial-gradient(circle at top right, rgba(0,255,195,0.18), transparent 35%),
-radial-gradient(circle at bottom left, rgba(111,92,255,0.12), transparent 30%);
-pointer-events:none;
-}
-
 .hero-banner h1{
 font-size:clamp(3rem,8vw,5rem);
 font-weight:900;
@@ -317,14 +307,12 @@ font-size:1.05rem;
 
 .stats-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:1fr;
 gap:24px;
 margin-bottom:30px;
 }
 
 .stat-card{
-position:relative;
-overflow:hidden;
 background:linear-gradient(
 135deg,
 rgba(255,255,255,0.06),
@@ -334,24 +322,6 @@ border:1px solid rgba(255,255,255,0.08);
 padding:30px;
 border-radius:30px;
 backdrop-filter:blur(18px);
-transition:0.3s ease;
-}
-
-.stat-card:hover{
-transform:translateY(-4px);
-border-color:rgba(0,255,195,0.25);
-}
-
-.stat-card::before{
-content:"";
-position:absolute;
-top:-80px;
-right:-80px;
-width:180px;
-height:180px;
-background:rgba(0,255,195,0.08);
-border-radius:50%;
-filter:blur(30px);
 }
 
 .stat-label{
@@ -405,7 +375,7 @@ margin-bottom:24px;
 
 .player-list{
 display:grid;
-gap:14px;
+gap:16px;
 max-height:650px;
 overflow-y:auto;
 padding-right:6px;
@@ -425,32 +395,46 @@ border-radius:999px;
 }
 
 .player-card{
-background:rgba(255,255,255,0.04);
-border:1px solid rgba(255,255,255,0.06);
-padding:18px;
-border-radius:20px;
+
+background:
+linear-gradient(
+135deg,
+rgba(0,255,195,0.10),
+rgba(111,92,255,0.10),
+rgba(255,79,216,0.06)
+);
+
+border:1px solid rgba(255,255,255,0.08);
+
+padding:20px;
+
+border-radius:22px;
+
 display:flex;
 justify-content:space-between;
 align-items:center;
 gap:20px;
-transition:0.3s ease;
-backdrop-filter:blur(10px);
+
+transition:0.35s ease;
+
+backdrop-filter:blur(14px);
+
+box-shadow:
+0 0 20px rgba(0,255,195,0.06),
+0 0 30px rgba(111,92,255,0.05);
+
 }
 
 .player-card:hover{
-transform:translateX(4px);
+
+transform:translateY(-3px) scale(1.01);
+
 border-color:rgba(0,255,195,0.22);
-background:rgba(255,255,255,0.06);
-}
 
-.player-card strong{
-font-size:1rem;
-color:white;
-}
+box-shadow:
+0 0 35px rgba(0,255,195,0.14),
+0 0 45px rgba(111,92,255,0.12);
 
-.player-card span{
-color:var(--text);
-font-size:0.92rem;
 }
 
 .side-stack{
@@ -628,10 +612,6 @@ padding:30px;
 font-size:3rem;
 }
 
-.stats-grid{
-grid-template-columns:1fr;
-}
-
 .topbar{
 flex-direction:column;
 align-items:flex-start;
@@ -731,18 +711,6 @@ Monitor your server in real time, manage internal systems, track active players,
 <div class="stat-label">Players Online</div>
 <div class="stat-number" id="playerCount">0</div>
 <p>Real-time connected players synced directly from FiveM.</p>
-</div>
-
-<div class="stat-card">
-<div class="stat-label">Framework</div>
-<div class="stat-number">QBOX</div>
-<p>Fully optimized custom Qbox framework infrastructure.</p>
-</div>
-
-<div class="stat-card">
-<div class="stat-label">Assets</div>
-<div class="stat-number">300+</div>
-<p>Massive custom asset collection powering the city.</p>
 </div>
 
 </div>
@@ -972,12 +940,34 @@ playerDiv.className = "player-card";
 playerDiv.innerHTML = `
 
 <div>
-<strong>${player.name}</strong>
-<span>Connected to Unova Roleplay</span>
+
+<strong style="
+font-size:1.05rem;
+display:block;
+margin-bottom:6px;
+">
+${player.name}
+</strong>
+
+<span style="
+color:rgba(255,255,255,0.6);
+font-size:0.9rem;
+">
+Active Player
+</span>
+
 </div>
 
-<div>
-ID: ${player.id || 'N/A'}
+<div style="
+padding:10px 14px;
+border-radius:14px;
+background:rgba(255,255,255,0.06);
+border:1px solid rgba(255,255,255,0.08);
+font-weight:700;
+">
+
+#${player.id || 'N/A'}
+
 </div>
 
 `;
