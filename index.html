@@ -2,477 +2,383 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Unova Roleplay</title>
+
   <link rel="icon" type="image/gif" href="https://r2.fivemanage.com/O8nsC8f5nKWaQAbWhOnvx/3dgifmaker27271.gif">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Inter', sans-serif;
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Inter',sans-serif;
     }
 
-    body {
-      background: #050505;
-      color: white;
-      overflow-x: hidden;
+    body{
+      background:#050505;
+      color:white;
+      overflow-x:hidden;
     }
 
-    .background {
-      position: absolute;
-      inset: 0;
+    .background{
+      position:fixed;
+      inset:0;
       background:
-        linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.85)),
-        url('https://images.unsplash.com/photo-1514565131-fce0801e5785?q=80&w=2070&auto=format&fit=crop');
-      background-size: cover;
-      background-position: center;
-      z-index: -2;
+      linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.85)),
+      url('https://images.unsplash.com/photo-1514565131-fce0801e5785?q=80&w=2070&auto=format&fit=crop');
+      background-size:cover;
+      background-position:center;
+      z-index:-2;
     }
 
-    .glow {
-      position: fixed;
-      width: 500px;
-      height: 500px;
-      border-radius: 50%;
-      background: rgba(0, 255, 200, 0.15);
-      filter: blur(120px);
-      top: -100px;
-      right: -100px;
-      z-index: -1;
+    .glow{
+      position:fixed;
+      width:500px;
+      height:500px;
+      border-radius:50%;
+      background:rgba(0,255,200,0.15);
+      filter:blur(120px);
+      top:-100px;
+      right:-100px;
+      z-index:-1;
     }
 
-    nav {
-      width: calc(100% - 80px);
-      padding: 18px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: fixed;
-      top: 20px;
-      backdrop-filter: blur(6px);
-      background: linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.45));
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 24px;
-      left: 40px;
-      right: 40px;
-      z-index: 100;
+    nav{
+      width:calc(100% - 80px);
+      padding:18px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      position:fixed;
+      top:20px;
+      left:40px;
+      right:40px;
+      z-index:100;
+      backdrop-filter:blur(6px);
+      background:linear-gradient(to bottom, rgba(0,0,0,0.15), rgba(0,0,0,0.45));
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:24px;
     }
 
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      font-size: 1.8rem;
-      font-weight: 800;
-      letter-spacing: 2px;
-      color: #00ffc3;
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      font-size:1.8rem;
+      font-weight:800;
+      letter-spacing:2px;
+      color:#00ffc3;
     }
 
-    .nav-links {
-      display: flex;
-      gap: 30px;
+    .logo img{
+      width:58px;
+      height:58px;
+      object-fit:contain;
+      filter:drop-shadow(0 0 18px rgba(0,255,195,0.45));
     }
 
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: 0.3s ease;
+    .nav-links{
+      display:flex;
+      gap:30px;
     }
 
-    .nav-links a:hover {
-      color: #00ffc3;
+    .nav-links a{
+      color:white;
+      text-decoration:none;
+      font-weight:500;
+      transition:0.3s;
     }
 
-    .hero {
-      position: relative;
-      overflow: hidden;
-      min-height: 115vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 140px 8% 120px;
+    .nav-links a:hover{
+      color:#00ffc3;
     }
 
-    .hero-banner {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100vh;
-      object-fit: cover;
-      object-position: center;
-      background: transparent;
-      opacity: 0.78;
-      filter: saturate(1.5) contrast(1.2) brightness(1.15) scale(1.05);
-      pointer-events: none;
+    .hero{
+      position:relative;
+      overflow:hidden;
+      min-height:115vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:140px 8% 120px;
     }
 
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.65));
+    .hero-banner{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:115vh;
+      object-fit:cover;
+      opacity:0.78;
+      filter:saturate(1.5) contrast(1.2) brightness(1.15);
     }
 
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 900px;
+    .hero-overlay{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.65));
     }
 
-    .tag {
-      display: inline-block;
-      padding: 10px 18px;
-      border-radius: 999px;
-      background: rgba(0,255,195,0.12);
-      border: 1px solid rgba(0,255,195,0.35);
-      color: #00ffc3;
-      margin-bottom: 25px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      letter-spacing: 1px;
+    .hero-content{
+      position:relative;
+      z-index:2;
+      max-width:900px;
     }
 
-    h1 {
-      font-size: clamp(3rem, 8vw, 6.5rem);
-      line-height: 1;
-      font-weight: 800;
-      margin-bottom: 25px;
-      text-transform: uppercase;
+    .tag{
+      display:inline-block;
+      padding:10px 18px;
+      border-radius:999px;
+      background:rgba(0,255,195,0.12);
+      border:1px solid rgba(0,255,195,0.35);
+      color:#00ffc3;
+      margin-bottom:25px;
+      font-size:0.9rem;
+      font-weight:600;
+      letter-spacing:1px;
     }
 
-    .highlight {
-      color: #00ffc3;
-      text-shadow: 0 0 20px rgba(0,255,195,0.6);
+    h1{
+      font-size:clamp(3rem,8vw,6.5rem);
+      line-height:1;
+      font-weight:800;
+      margin-bottom:25px;
+      text-transform:uppercase;
     }
 
-    .hero p {
-      font-size: 1.15rem;
-      color: rgba(255,255,255,0.8);
-      line-height: 1.8;
-      margin-bottom: 40px;
+    .highlight{
+      color:#00ffc3;
+      text-shadow:0 0 20px rgba(0,255,195,0.6);
     }
 
-    .buttons {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
+    .hero p{
+      font-size:1.15rem;
+      color:rgba(255,255,255,0.8);
+      line-height:1.8;
+      margin-bottom:40px;
     }
 
-    .btn {
-      padding: 16px 34px;
-      border-radius: 16px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: 0.3s ease;
-      border: 1px solid transparent;
+    .buttons{
+      display:flex;
+      justify-content:center;
+      gap:20px;
+      flex-wrap:wrap;
     }
 
-    .btn-primary {
-      background: #00ffc3;
-      color: black;
-      box-shadow: 0 0 30px rgba(0,255,195,0.35);
+    .btn{
+      padding:16px 34px;
+      border-radius:16px;
+      font-weight:700;
+      text-decoration:none;
+      transition:0.3s;
     }
 
-    .btn-primary:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 0 45px rgba(0,255,195,0.5);
+    .btn-primary{
+      background:#00ffc3;
+      color:black;
+      box-shadow:0 0 30px rgba(0,255,195,0.35);
     }
 
-    .btn-secondary {
-      border: 1px solid rgba(255,255,255,0.18);
-      background: rgba(255,255,255,0.05);
-      color: white;
+    .btn-secondary{
+      border:1px solid rgba(255,255,255,0.18);
+      background:rgba(255,255,255,0.05);
+      color:white;
     }
 
-    .btn-secondary:hover {
-      background: rgba(255,255,255,0.12);
-      transform: translateY(-4px);
+    .features{
+      padding:100px 8%;
     }
 
-    .features {
-      padding: 100px 8%;
+    .section-title{
+      text-align:center;
+      font-size:2.8rem;
+      margin-bottom:60px;
+      font-weight:800;
     }
 
-    .section-title {
-      text-align: center;
-      font-size: 2.8rem;
-      margin-bottom: 60px;
-      font-weight: 800;
+    .feature-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:30px;
     }
 
-    .feature-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 30px;
+    .card{
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:28px;
+      padding:35px;
+      backdrop-filter:blur(10px);
     }
 
-    .card {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 28px;
-      padding: 35px;
-      backdrop-filter: blur(10px);
-      transition: 0.3s ease;
+    .card h3{
+      margin-bottom:15px;
+      font-size:1.4rem;
+      color:#00ffc3;
     }
 
-    .card:hover {
-      transform: translateY(-10px);
-      border-color: rgba(0,255,195,0.4);
-      box-shadow: 0 10px 40px rgba(0,0,0,0.45);
+    .card p{
+      color:rgba(255,255,255,0.75);
+      line-height:1.7;
     }
 
-    .card h3 {
-      margin-bottom: 15px;
-      font-size: 1.4rem;
-      color: #00ffc3;
+    .stats{
+      padding:40px 8% 100px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+      gap:25px;
     }
 
-    .card p {
-      color: rgba(255,255,255,0.75);
-      line-height: 1.7;
+    .stat-box{
+      text-align:center;
+      padding:35px;
+      border-radius:24px;
+      background:rgba(255,255,255,0.04);
+      border:1px solid rgba(255,255,255,0.08);
     }
 
-    .stats {
-      padding: 40px 8% 100px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 25px;
+    .stat-box h2{
+      font-size:3rem;
+      color:#00ffc3;
     }
 
-    .stat-box {
-      text-align: center;
-      padding: 35px;
-      border-radius: 24px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
+    footer{
+      padding:40px 8%;
+      text-align:center;
+      border-top:1px solid rgba(255,255,255,0.08);
+      color:rgba(255,255,255,0.6);
     }
 
-    .stat-box h2 {
-      font-size: 3rem;
-      color: #00ffc3;
-      margin-bottom: 10px;
-    }
-
-    .stat-box span {
-      color: rgba(255,255,255,0.7);
-    }
-
-    footer {
-      padding: 40px 8%;
-      text-align: center;
-      border-top: 1px solid rgba(255,255,255,0.08);
-      color: rgba(255,255,255,0.6);
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        gap: 18px;
-      }
-
-      .nav-links {
-        gap: 18px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .buttons {
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-      }
-    }
   </style>
 </head>
+
 <body>
-  <div class="background"></div>
-  <div class="glow"></div>
 
-  <nav>
-    <div class="logo">
-      <img src="https://r2.fivemanage.com/O8nsC8f5nKWaQAbWhOnvx/3dgifmaker27271.gif" alt="Unova Logo" style="width:58px;height:58px;object-fit:contain;filter:drop-shadow(0 0 18px rgba(0,255,195,0.45));">
-      <span>UNOVA RP</span>
+<div class="background"></div>
+<div class="glow"></div>
+
+<nav>
+
+  <div class="logo">
+    <img src="https://r2.fivemanage.com/O8nsC8f5nKWaQAbWhOnvx/3dgifmaker27271.gif">
+    <span>UNOVA RP</span>
+  </div>
+
+  <div class="nav-links">
+    <a href="#features">Features</a>
+    <a href="#community">Community</a>
+    <a href="rules.html">Rules</a>
+    <a href="#join">Join</a>
+  </div>
+
+</nav>
+
+<section class="hero">
+
+  <img class="hero-banner" src="https://r2.fivemanage.com/O8nsC8f5nKWaQAbWhOnvx/unovabanner.gif">
+
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+
+    <div class="tag">NEXT LEVEL FIVEM ROLEPLAY</div>
+
+    <h1>
+      Welcome To <span class="highlight">Unova</span><br>
+      Roleplay
+    </h1>
+
+    <p>
+      A premium FiveM roleplay experience featuring realistic jobs,
+      immersive gangs, custom vehicles, player-owned businesses,
+      active staff, Qbox framework support, and over 300+ custom assets.
+    </p>
+
+    <div class="buttons" id="join">
+      <a href="https://discord.gg/md6cwMh7eF" class="btn btn-primary">Join Discord</a>
+      <a href="fivem://connect/yourserverip" class="btn btn-secondary">Connect To Server</a>
     </div>
 
-    <div class="nav-links">
-      <a href="#features">Features</a>
-      <a href="#community">Community</a>
-      <a href="#join">Join</a>
-    </div>
-  </nav>
+  </div>
 
-  <section class="hero" id="home">
-    <img class="hero-banner" src="https://r2.fivemanage.com/O8nsC8f5nKWaQAbWhOnvx/unovabanner.gif" alt="Unova Banner">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <div class="tag">NEXT LEVEL FIVEM ROLEPLAY</div>
+</section>
 
-      <h1>
-        Welcome To <span class="highlight">Unova</span><br>
-        Roleplay
-      </h1>
+<section class="features" id="features">
 
+  <h2 class="section-title">Why Play Unova?</h2>
+
+  <div class="feature-grid">
+
+    <div class="card">
+      <h3>Qbox Framework</h3>
       <p>
-        A premium FiveM roleplay experience featuring realistic jobs,
-        immersive gangs, custom vehicles, player-owned businesses,
-        active staff, and a cinematic city built for serious RP.
-      </p>
-
-      <div class="buttons" id="join">
-        <a href="https://discord.gg/md6cwMh7eF" class="btn btn-primary">Join Discord</a>
-        <a href="fivem://connect/yourserverip" class="btn btn-secondary">Connect To Server</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="features" id="features">
-    <h2 class="section-title">Why Play Unova?</h2>
-
-    <div class="feature-grid">
-      <div class="card">
-        <h3>Qbox Framework</h3>
-        <p>
-          Built on the powerful Qbox framework with advanced systems,
-          realistic mechanics, immersive jobs, and optimized performance.
-        </p>
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Player Businesses</h3>
-        <p>
-          Run mechanics, restaurants, clubs, dealerships, and more with a
-          fully interactive business management experience.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>High Quality Vehicles</h3>
-        <p>
-          Drive custom imported cars with realistic handling, tuning,
-          animations, liveries, and modifications.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Active Community</h3>
-        <p>
-          Join a growing community with frequent events, responsive staff,
-          and serious roleplay standards.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="stats" id="community">
-    <div class="stat-box">
-      <h2>24/7</h2>
-      <span>Server Uptime</span>
-    </div>
-
-    <div class="stat-box">
-      <h2>300+</h2>
-      <span>Custom Assets</span>
-    </div>
-
-    <div class="stat-box">
-      <h2>Realistic</h2>
-      <span>Economy System</span>
-    </div>
-
-    <div class="stat-box">
-      <h2>Serious</h2>
-      <span>Roleplay Community</span>
-    </div>
-  </section>
-
-    <section class="features" id="rules">
-    <h2 class="section-title">Official Rule Book</h2>
-
-    <div class="card" style="max-width:1200px;margin:0 auto;line-height:1.9;">
-      <h3 style="margin-bottom:20px;">Unova Roleplay Official BIBLE of Rules</h3>
-
-      <p>
-        Welcome to Unova Roleplay, a serious FiveM roleplay server focused on realistic,
-        immersive, and story-driven roleplay. By joining the city you agree to follow all
-        server rules both in-city and out-of-city.
-      </p>
-
-      <br>
-
-      <h3>Key Server Rules</h3>
-
-      <p>
-        • Strictly 18+ community<br>
-        • No racism, harassment, sexism, homophobia, or discrimination<br>
-        • No metagaming, powergaming, fail RP, RDM, or VDM<br>
-        • Remain in character at all times<br>
-        • Value your life realistically in all scenarios<br>
-        • No ERP, terrorism RP, or suicide RP<br>
-        • No exploiting, cheating, or abusing mechanics<br>
-        • No impersonating PD, UHS, Fire, or Government roles<br>
-        • Green Zones must always be respected<br>
-        • Staff decisions are final unless appealed properly
-      </p>
-
-      <br>
-
-      <h3>Roleplay Standards</h3>
-
-      <p>
-        Unova focuses on serious immersive roleplay with realistic escalation,
-        meaningful storylines, and high-quality interactions. Guns should always
-        be a last resort and all scenes should prioritise strong RP over quick outcomes.
-      </p>
-
-      <br>
-
-      <h3>New Life Rule (NLR)</h3>
-
-      <p>
-        If your character enters a coma or respawns, you must forget the last 15 minutes
-        leading up to the incident. Returning directly to the same scene or seeking instant
-        revenge is forbidden.
-      </p>
-
-      <br>
-
-      <h3>Whitelisted Jobs</h3>
-
-      <p>
-        Police, UHS, Fire, Justice, and Government jobs are protected whitelisted roles.
-        Corruption is forbidden unless approved directly by staff.
-      </p>
-
-      <br>
-
-      <h3>Combat & Initiation</h3>
-
-      <p>
-        All hostile RP requires proper initiation. There are no red zones within the city.
-        Random violence or poor escalation will lead to disciplinary action.
-      </p>
-
-      <br>
-
-      <p>
-        Full detailed rules are available within the Discord server. Rules may be updated
-        at any time and all players are responsible for staying informed.
+        Built on the powerful Qbox framework with immersive systems,
+        optimized performance and realistic gameplay mechanics.
       </p>
     </div>
-  </section>
 
-  <footer>
-    © 2026 Unova Roleplay • Built for immersive FiveM roleplay.
-  </footer>
+    <div class="card">
+      <h3>Player Businesses</h3>
+      <p>
+        Run mechanics, dealerships, clubs, restaurants and more
+        with a realistic player economy.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Custom Vehicles</h3>
+      <p>
+        Drive custom imported cars with realistic handling,
+        tuning, liveries and modifications.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Serious RP Community</h3>
+      <p>
+        Join a growing community focused on immersive,
+        story-driven and high quality roleplay.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="stats" id="community">
+
+  <div class="stat-box">
+    <h2>24/7</h2>
+    <span>Server Uptime</span>
+  </div>
+
+  <div class="stat-box">
+    <h2>300+</h2>
+    <span>Custom Assets</span>
+  </div>
+
+  <div class="stat-box">
+    <h2>QBOX</h2>
+    <span>Framework</span>
+  </div>
+
+  <div class="stat-box">
+    <h2>Serious</h2>
+    <span>Roleplay</span>
+  </div>
+
+</section>
+
+<footer>
+  © 2026 Unova Roleplay
+</footer>
+
 </body>
 </html>
