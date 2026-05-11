@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Unova Admin Panel</title>
+
+<link rel="icon" type="image/gif" href="https://r2.fivemanage.com/O8nsC8f5nKWaQAbWhOnvx/3dgifmaker27271.gif">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:#050505;
+color:white;
+overflow-x:hidden;
+padding:40px 20px;
+}
+
+.background{
+position:fixed;
+inset:0;
+background:
+linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.92)),
+url('https://r2.fivemanage.com/O8nsC8f5nKWaQAbWhOnvx/unovabanner.gif');
+background-size:cover;
+background-position:center;
+z-index:-2;
+}
+
+.glow{
+position:fixed;
+width:500px;
+height:500px;
+border-radius:50%;
+background:rgba(0,255,200,0.12);
+filter:blur(120px);
+top:-100px;
+right:-100px;
+z-index:-1;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+}
+
+.topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:50px;
+flex-wrap:wrap;
+gap:20px;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:14px;
+font-size:2rem;
+font-weight:800;
+color:#00ffc3;
+}
+
+.logo img{
+width:58px;
+height:58px;
+object-fit:contain;
+filter:drop-shadow(0 0 18px rgba(0,255,195,0.45));
+}
+
+.logout{
+padding:14px 22px;
+border-radius:14px;
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.08);
+color:white;
+text-decoration:none;
+transition:0.3s ease;
+}
+
+.logout:hover{
+border-color:rgba(0,255,195,0.35);
+color:#00ffc3;
+}
+
+.hero{
+margin-bottom:50px;
+}
+
+.hero h1{
+font-size:clamp(3rem,8vw,5rem);
+color:#00ffc3;
+margin-bottom:18px;
+}
+
+.hero p{
+color:rgba(255,255,255,0.75);
+line-height:1.9;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:30px;
+}
+
+.card{
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.08);
+border-radius:28px;
+padding:35px;
+backdrop-filter:blur(10px);
+}
+
+.card h2{
+color:#00ffc3;
+margin-bottom:18px;
+font-size:1.5rem;
+}
+
+.card p{
+color:rgba(255,255,255,0.75);
+line-height:1.8;
+margin-bottom:10px;
+}
+
+.card a{
+color:#00ffc3;
+text-decoration:none;
+word-break:break-all;
+}
+
+.copy-box{
+background:rgba(255,255,255,0.04);
+padding:14px;
+border-radius:14px;
+margin-top:14px;
+border:1px solid rgba(255,255,255,0.06);
+}
+
+footer{
+text-align:center;
+padding:60px 0 20px;
+color:rgba(255,255,255,0.45);
+}
+
+@media(max-width:768px){
+
+.logo{
+font-size:1.4rem;
+}
+
+.logo img{
+width:44px;
+height:44px;
+}
+
+.hero h1{
+font-size:3rem;
+}
+
+.card{
+padding:26px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="background"></div>
+<div class="glow"></div>
+
+<div class="container">
+
+<div class="topbar">
+
+<div class="logo">
+<img src="https://r2.fivemanage.com/O8nsC8f5nKWaQAbWhOnvx/3dgifmaker27271.gif">
+<span>UNOVA ADMIN</span>
+</div>
+
+<a href="index.html" class="logout">
+Logout
+</a>
+
+</div>
+
+<div class="hero">
+
+<h1>Admin Dashboard</h1>
+
+<p>
+Internal management panel for Unova Roleplay staff and ownership.
+Store important links, credentials, social accounts and development tools here.
+</p>
+
+</div>
+
+<div class="grid">
+
+<div class="card">
+
+<h2>TX Admin</h2>
+
+<p>
+Use the link below to access txAdmin.
+</p>
+
+<div class="copy-box">
+<a href="https://your-txadmin-link-here.com" target="_blank">
+https://your-txadmin-link-here.com
+</a>
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Discord Server</h2>
+
+<p>
+Official Unova Discord invite link.
+</p>
+
+<div class="copy-box">
+<a href="https://discord.gg/md6cwMh7eF" target="_blank">
+discord.gg/md6cwMh7eF
+</a>
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Social Media</h2>
+
+<p>Instagram: @unovarp</p>
+<p>TikTok: @unovarp</p>
+<p>YouTube: Unova Roleplay</p>
+
+</div>
+
+<div class="card">
+
+<h2>Management Team</h2>
+
+<p>Founder — Jack Hodgy</p>
+<p>Owner — xSH4D3x</p>
+<p>Co-Owner & Developer — Tom</p>
+<p>Co-Owner — Turbo</p>
+
+</div>
+
+</div>
+
+<footer>
+© 2026 Unova Roleplay Admin Panel
+</footer>
+
+</div>
+
+</body>
+</html>
