@@ -391,12 +391,13 @@ async function loadPlayers(){
 try{
 
 const response = await fetch(
-"https://proxy-redirector.lib.uchicago.edu/login?url=http%3A%2F%2F92.204.170.249%3A20140%2Fplayers.json"
+"https://servers-frontend.fivem.net/api/servers/single/e6e6473"
 );
 
 const data = await response.json();
 
-const players = data || [];
+const players =
+data.Data.players || [];
 
 document.getElementById("playerCount").innerText =
 players.length + " Players Online";
