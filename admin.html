@@ -23,6 +23,10 @@ box-sizing:border-box;
 font-family:'Inter',sans-serif;
 }
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
 background:#050505;
 color:white;
@@ -111,6 +115,7 @@ margin-bottom:18px;
 .hero p{
 color:rgba(255,255,255,0.75);
 line-height:1.9;
+max-width:900px;
 }
 
 .grid{
@@ -125,6 +130,12 @@ border:1px solid rgba(255,255,255,0.08);
 border-radius:28px;
 padding:35px;
 backdrop-filter:blur(10px);
+transition:0.3s ease;
+}
+
+.card:hover{
+transform:translateY(-8px);
+border-color:rgba(0,255,195,0.35);
 }
 
 .card h2{
@@ -151,6 +162,40 @@ padding:14px;
 border-radius:14px;
 margin-top:14px;
 border:1px solid rgba(255,255,255,0.06);
+}
+
+.quick-actions{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+margin-top:20px;
+}
+
+.quick-actions a{
+padding:12px 18px;
+border-radius:14px;
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.08);
+color:white;
+text-decoration:none;
+transition:0.3s ease;
+}
+
+.quick-actions a:hover{
+border-color:rgba(0,255,195,0.35);
+color:#00ffc3;
+}
+
+.status{
+display:inline-block;
+padding:8px 14px;
+border-radius:999px;
+background:rgba(0,255,120,0.12);
+border:1px solid rgba(0,255,120,0.3);
+color:#5dff9d;
+font-size:0.9rem;
+font-weight:600;
+margin-top:10px;
 }
 
 footer{
@@ -194,8 +239,11 @@ padding:26px;
 <div class="topbar">
 
 <div class="logo">
+
 <img src="https://r2.fivemanage.com/O8nsC8f5nKWaQAbWhOnvx/3dgifmaker27271.gif">
+
 <span>UNOVA ADMIN</span>
+
 </div>
 
 <a href="index.html" class="logout">
@@ -210,8 +258,13 @@ Logout
 
 <p>
 Internal management panel for Unova Roleplay staff and ownership.
-Store important links, credentials, social accounts and development tools here.
+Store important links, credentials, social accounts, development tools,
+server information and management resources here.
 </p>
+
+<div class="status">
+● Server Status: Online
+</div>
 
 </div>
 
@@ -226,9 +279,15 @@ Use the link below to access txAdmin.
 </p>
 
 <div class="copy-box">
-<a href="https://your-txadmin-link-here.com" target="_blank">
+
+<a
+href="https://your-txadmin-link-here.com"
+target="_blank">
+
 https://your-txadmin-link-here.com
+
 </a>
+
 </div>
 
 </div>
@@ -242,9 +301,15 @@ Official Unova Discord invite link.
 </p>
 
 <div class="copy-box">
-<a href="https://discord.gg/md6cwMh7eF" target="_blank">
+
+<a
+href="https://discord.gg/md6cwMh7eF"
+target="_blank">
+
 discord.gg/md6cwMh7eF
+
 </a>
+
 </div>
 
 </div>
@@ -253,9 +318,13 @@ discord.gg/md6cwMh7eF
 
 <h2>Social Media</h2>
 
-<p>Instagram: @unovarp</p>
-<p>TikTok: @unovarp</p>
-<p>YouTube: Unova Roleplay</p>
+<p>Instagram — @unovarp</p>
+
+<p>TikTok — @unovarp</p>
+
+<p>YouTube — Unova Roleplay</p>
+
+<p>Twitter/X — @unovarp</p>
 
 </div>
 
@@ -264,9 +333,50 @@ discord.gg/md6cwMh7eF
 <h2>Management Team</h2>
 
 <p>Founder — Jack Hodgy</p>
+
 <p>Owner — xSH4D3x</p>
+
 <p>Co-Owner & Developer — Tom</p>
+
 <p>Co-Owner — Turbo</p>
+
+</div>
+
+<div class="card">
+
+<h2>Quick Links</h2>
+
+<div class="quick-actions">
+
+<a href="index.html">
+Homepage
+</a>
+
+<a href="rules.html">
+Rules
+</a>
+
+<a href="staff.html">
+Management
+</a>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>Server Information</h2>
+
+<p>Framework — QBOX</p>
+
+<p>Assets — 300+</p>
+
+<p>Roleplay Type — Serious RP</p>
+
+<p>Whitelist — Enabled</p>
+
+<p>Economy — Custom</p>
 
 </div>
 
